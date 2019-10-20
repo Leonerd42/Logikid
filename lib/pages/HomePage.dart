@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import './../components/CustomizedButton.dart';
 
-class Temp extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-        backgroundColor: Color(0xFF3DCBCB), // Cor de fundo
+        backgroundColor: Color(0xFF3DCBCB),
         body: Column(
           children: <Widget>[
-            // Texto da tela inicial
             Container(
                 child: Text(
                   'LOGIKID',
@@ -20,20 +20,17 @@ class Temp extends StatelessWidget {
                     left: 0.0, right: 0.0, top: 50, bottom: 10.0)),
             // Card
             Container(
-              height: (MediaQuery.of(context).size.height * 0.8),
+              height: (size.height * 0.8),
               margin: EdgeInsets.only(
                   left: 30.0, right: 30.0, top: 0.0, bottom: 0.0),
               child: Card(
                 color: Color(0xFFF1D8CF),
-                // Coluna dentro do card
                 child: Column(
                   children: <Widget>[
-                    // Animação do robo
                     Image.asset('assets/imgs/robo.gif'),
-                    // Botões
                     Column(
                       children: <Widget>[
-                        new Button('assets/imgs/house@2x.png','Entrar',88.0,88.0,''),
+                        new Button('assets/imgs/house@2x.png','Entrar',88.0,88.0,'login',changePage),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +38,7 @@ class Temp extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.only(
                                   left: 0.0, right: 20, top: 50, bottom: 10.0),
-                              child: new Button('assets/imgs/sair2.png','Sair',88.0,88.0,''),
+                              child: new Button('assets/imgs/sair2.png','Sair',88.0,88.0,'close',changePage),
                             ),
                             Padding(
                                 padding: EdgeInsets.only(
@@ -49,7 +46,7 @@ class Temp extends StatelessWidget {
                                     right: 0.0,
                                     top: 50,
                                     bottom: 10.0),
-                                child: new Button('assets/imgs/program.png','Cadastrar',88.0,88.0,''))
+                                child: new Button('assets/imgs/program.png','Cadastrar',88.0,88.0,'register',changePage))
                           ],
                         ),
                       ],
@@ -61,32 +58,20 @@ class Temp extends StatelessWidget {
           ],
         ));
   }
-}
 
-class Button extends StatelessWidget {
-  final String path, text, action;
-  final width, height;
-
-  Button(
-      this.path,
-      this.text,
-      this.width,
-      this.height,
-      this.action);
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      // needed
-      color: Colors.transparent,
-      child: Column(
-        children: <Widget>[
-          InkWell(
-              onTap: () => {}, // needed
-              child: Image.asset(path, width: width, height: height)),
-          Text(text ,style: TextStyle(fontSize: 23.0),)
-        ],
-      ),
-    );
+  void changePage(String page, BuildContext ctx){
+    switch(page) {
+      case 'login':
+        Navigator.of(ctx).pushNamed('/login');
+        break;
+      case 'close':
+        Navigator.of(ctx).pushNamed('/choose-action');
+        break;
+      case 'register':
+        Navigator.of(ctx).pushNamed('/register');  // Changer here to go to pages
+        break;
+    }
   }
 }
+
+

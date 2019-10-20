@@ -1,10 +1,9 @@
-// Copyright 2018 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 
-import './template.dart';
+import './pages/HomePage.dart';
+import './pages/ChooseAction.dart';
+import './pages/LoginPage.dart';
+import './pages/RegisterPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +20,12 @@ class _MyAppState extends State<MyApp>{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
-      home: Temp(),
+      home: HomePage(),
+      routes: {
+        '/choose-action': (ctx) => ChooseAction(),
+        '/login': (ctx) => LoginPage(),
+        '/register': (ctx) => RegisterPage()
+      },
     );
   }
 }
