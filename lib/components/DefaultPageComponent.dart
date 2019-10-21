@@ -4,7 +4,7 @@ class DefaultPageComponent extends StatelessWidget {
 
   final Widget childBody;
 
-  DefaultPageComponent(this.childBody);
+  DefaultPageComponent({this.childBody});
 
   @override
   Widget build(BuildContext context) {
