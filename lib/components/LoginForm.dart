@@ -8,38 +8,59 @@ class LoginForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          TextFormField(
-            decoration: const InputDecoration(
-              icon: Icon(Icons.email),
-              hintText: 'What do people call you?',
-              labelText: 'Email*',
-            ),
-            onSaved: (String value) {
-              // This optional block of code can be used to run
-              // code when the user saves the form.
-            },
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              hintText: 'What do people call you?',
-              labelText: 'Password*',
-
-            ),
-            onSaved: (String value) {
-              // This optional block of code can be used to run
-              // code when the user saves the form.
-            },
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: RaisedButton(
-              onPressed: () {
-                print('Botão pressionado');
-                // Validate will return true if the form is valid, or false if
-                // the form is invalid.
-
+          Container(
+            margin: EdgeInsets.only(top: 0.0, bottom: 5.0, left: 0.0, right: 0.0),
+            child: TextFormField(
+              decoration: new InputDecoration(
+                labelText: "Enter Email",
+                filled: true,
+                fillColor: Colors.white,
+                border: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(
+                  ),
+                ),
+                //fillColor: Colors.green
+              ),
+              validator: (val) {
+                if(val.length==0) {
+                  return "Email cannot be empty";
+                }else{
+                  return null;
+                }
               },
-              child: Text('Submit'),
+              keyboardType: TextInputType.emailAddress,
+              style: new TextStyle(
+                fontFamily: "Poppins",
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 5.0, bottom: 0.0, left: 0.0, right: 0.0),
+            child: TextFormField(
+              obscureText: true,
+              decoration: new InputDecoration(
+                filled: true,
+                labelText: "Enter passworod",
+                fillColor: Colors.white,
+                border: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(
+                  ),
+                ),
+                //fillColor: Colors.green
+              ),
+              validator: (val) {
+                if(val.length==0) {
+                  return "Password cannot be empty";
+                }else{
+                  return null;
+                }
+              },
+              keyboardType: TextInputType.emailAddress,
+              style: new TextStyle(
+                fontFamily: "Poppins",
+              ),
             ),
           ),
         ],
