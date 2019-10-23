@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import './../components/CustomizedButton.dart';
 import './../components/DefaultPageComponent.dart';
+import './../components/SlideTransition.dart';
 import './../components/LoginForm.dart';
+import './../pages/ChooseAction.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -25,8 +27,8 @@ class LoginPage extends StatelessWidget {
                       'voltar', changePage)),
               Padding(
                   padding: EdgeInsets.only(
-                      left: 0.0, right: 20, top: 0.0, bottom: 10.0),
-                  child: Button('assets/imgs/play.png', 'Entrar', 88.0, 88.0,
+                      left: 40.0, right: 0.0, top: 0.0, bottom: 10.0),
+                  child: Button('assets/imgs/play.png', 'entrar', 88.0, 88.0,
                       'entrar', changePage)),
             ],
           )
@@ -41,6 +43,8 @@ class LoginPage extends StatelessWidget {
         Navigator.pop(ctx);
         break;
       case 'entrar':
+        print("Não ta indo não");
+        Navigator.push(ctx, SlideLeftRoute(page: ChooseAction()));
         break;
     }
   }

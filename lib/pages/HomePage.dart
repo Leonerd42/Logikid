@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
 import './../components/CustomizedButton.dart';
 import './../components/DefaultPageComponent.dart';
+import './../components/SlideTransition.dart';
+import './LoginPage.dart';
+import 'dart:io';
 
 class HomePage extends StatelessWidget {
   @override
@@ -22,7 +24,7 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.only(
                         left: 0.0, right: 20, top: 50, bottom: 10.0),
                     child: new Button('assets/imgs/sair2.png', 'Sair', 88.0,
-                        88.0, 'close', changePage),
+                        88.0, 'close', closeApp),
                   ),
                   Padding(
                       padding: EdgeInsets.only(
@@ -38,12 +40,17 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  void closeApp(String _, BuildContext c) {
+    exit(0);
+  }
+
   void changePage(String page, BuildContext ctx) {
     switch (page) {
       case 'login':
-        Navigator.of(ctx).pushNamed('/login');
+        Navigator.push(ctx, ScaleRoute(page: LoginPage()));
+        //Navigator.of(ctx).pushNamed('/login');
         break;
-      case 'close':
+      case 'close': //TODO fechar o aplicativo
         Navigator.of(ctx).pushNamed('/choose-action');
         break;
       case 'register':

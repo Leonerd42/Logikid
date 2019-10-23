@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-
 import './../components/DefaultPageComponent.dart';
 
-class RegisterPage extends StatelessWidget {
+class Program extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return DefaultPageComponent(
-      childBody: Center(child: Text("pagina para registrar")),
-    );
+    return DefaultPageComponent(childBody: Text('Program'),);
   }
 
   void changePage(String page) {
