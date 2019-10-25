@@ -49,6 +49,7 @@ flutter:
     - assets/imgs/program.png
     - assets/imgs/play.png
     - assets/imgs/info.png
+    - assets/imgs/recomecar.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
