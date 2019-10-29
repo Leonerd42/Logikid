@@ -79,7 +79,7 @@ class FormTest extends StatelessWidget {
           //nome
           Text("Nome",textScaleFactor: 2,),
           Container(
-            margin: EdgeInsets.only(top: 10.0, bottom: .0, left: 15.0, right: 15.0),
+            margin: EdgeInsets.only(top: 10.0, bottom: 5.0, left: 15.0, right: 15.0),
             child: TextFormField(
               decoration: new InputDecoration(
                 labelText: "Coloque o seu nome",
@@ -103,7 +103,7 @@ class FormTest extends StatelessWidget {
           //email
           Text("Email",textScaleFactor: 2,),
           Container(
-            margin: EdgeInsets.only(top: 10.0, bottom: .0, left: 15.0, right: 15.0),
+            margin: EdgeInsets.only(top: 10.0, bottom: 5.0, left: 15.0, right: 15.0),
             child: TextFormField(
               decoration: new InputDecoration(
                 labelText: "Coloque o seu email",
@@ -127,7 +127,7 @@ class FormTest extends StatelessWidget {
           //senha
           Text("Senha",textScaleFactor: 2,),
           Container(
-            margin: EdgeInsets.only(top: 10.0, bottom: .0, left: 15.0, right: 15.0),
+            margin: EdgeInsets.only(top: 10.0, bottom: 5.0, left: 15.0, right: 15.0),
             child: TextFormField(
               decoration: new InputDecoration(
                 labelText: "Coloque o sua senha",
@@ -147,40 +147,68 @@ class FormTest extends StatelessWidget {
                 fontFamily: "Poppins",
               ),
             ),
-          ),  
-         //idade
-          Text("Idade",textScaleFactor: 2,),
+          ), 
           Container(
-            margin: EdgeInsets.only(top: 10.0, bottom: .0, left: 15.0, right: 15.0),
-            child: TextFormField(
-              keyboardType: TextInputType.number,
-              decoration: new InputDecoration(
-                labelText: "Coloque o seu email",
-                filled: true,
-                fillColor: Colors.white,
-                //fillColor: Colors.green
-              ),
-              style: new TextStyle(
-                fontFamily: "Poppins",
-              ),
+            width: 400,
+            height: 150,
+            child: Row(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                      Text("Idade",textScaleFactor: 2,),
+                      Container(
+                        width: 100,
+                        margin: EdgeInsets.only(top: 10.0, bottom: 5.0, left: 15.0, right: 15.0),
+                        child: TextFormField(
+                          keyboardType: TextInputType.number,
+                          decoration: new InputDecoration(
+                            labelText: "Idade",
+                            filled: true,
+                            fillColor: Colors.white,
+                            //fillColor: Colors.green
+                          ),
+                          style: new TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Container(
+                      width: 200,
+                      child: Column(
+                        children: <Widget>[
+                          Text("Sexo",textScaleFactor: 2,),
+                          ListTile(
+                            title: const Text('Feminino'),
+                            leading: Radio(
+                              value: "Feminino",
+                              //groupValue: _sexo,
+                            ),
+                          ),
+                          ListTile(
+                            title: const Text('Masculino'),
+                            leading: Radio(
+                              value: "Masculino",
+                              //groupValue: _sexo,
+                            ),
+                          ),
+                        ], 
+                      ),
+                    ),
+                  ],
+                )
+              ],
             ),
-          ),
+          ) 
+         
+         //idade
+          
       //sexo
-          Text("Sexo",textScaleFactor: 2,),
-          ListTile(
-            title: const Text('Feminino'),
-            leading: Radio(
-              value: "Feminino",
-              //groupValue: _sexo,
-            ),
-          ),
-          ListTile(
-            title: const Text('Masculino'),
-            leading: Radio(
-              value: "Masculino",
-              //groupValue: _sexo,
-            ),
-          ),          
+        
+                    
         ],
       ),
     );
