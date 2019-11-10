@@ -202,13 +202,7 @@ class FormTest extends StatelessWidget {
                 )
               ],
             ),
-          ) 
-         
-         //idade
-          
-      //sexo
-        
-                    
+          )                     
         ],
       ),
     );
