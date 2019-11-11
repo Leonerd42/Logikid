@@ -72,7 +72,7 @@ class Program extends StatelessWidget {
   void changePage(String page, BuildContext ctx) {
     switch (page) {
       case 'sair':
-        Navigator.push(ctx, RotationRoute(page: ChooseAction()));
+        Navigator.pop(ctx);
         //Navigator.of(ctx).pushNamed('/login');
         break;
       case 'adicionar':
