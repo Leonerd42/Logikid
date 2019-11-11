@@ -9,7 +9,7 @@ class Execute extends StatelessWidget {
     return DefaultPageTest(
       childBody:  Column(
           children: <Widget>[
-            Container(child: Image.asset('assets/imgs/robo.gif',height: 300,), transform: Matrix4.translationValues(0, 0, 0),),
+            Container(child: Image.asset('assets/imgs/simulador.jpeg',height: 300,), transform: Matrix4.translationValues(0, 0, 0),),
             Container(
                transform: Matrix4.translationValues(15,130, 0),
               child: Flex(
