@@ -78,9 +78,10 @@ class Program extends StatelessWidget {
       case 'adicionar':
         Navigator.push(ctx, RotationRoute(page: AddInstruction()));
         break;
-      /*case 'info':
-        Navigator.push(ctx, SlideUpRoute(page: InfoPage()));
-        break;*/
+      case 'programa':
+        Scaffold.of(ctx).openDrawer();
+        //Navigator.push(ctx, SlideUpRoute(page: InfoPage()));
+        break;
     }
   }
 }
