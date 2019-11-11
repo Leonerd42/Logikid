@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:logikid/pages/AddInstruction.dart';
 import 'package:logikid/pages/ChooseAction.dart';
+import 'package:logikid/pages/Execute.dart';
 import './../components/DefaultPageTest.dart';
 import './../components/CustomizedButton.dart';
 import './../components/SlideTransition.dart';
@@ -82,6 +83,12 @@ class Program extends StatelessWidget {
         Scaffold.of(ctx).openDrawer();
         //Navigator.push(ctx, SlideUpRoute(page: InfoPage()));
         break;
+      case 'executar':
+        Navigator.push(ctx, SlideLeftRoute(page: Execute()));
+        break;
+      /*case 'info':
+        Navigator.push(ctx, SlideUpRoute(page: InfoPage()));
+        break;*/
     }
   }
 }
