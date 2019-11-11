@@ -27,7 +27,7 @@ class Execute extends StatelessWidget {
                             child: Padding(
                                 padding: EdgeInsets.only(
                                     left:105, right: 10, top: 0.0, bottom: 10.0),
-                                child: Button('assets/imgs/play.png', 'Executar', 68.0, 68.0,
+                                child: Button('assets/imgs/play.png', 'De novo', 68.0, 68.0,
                                     'executar', changePage)),
                                  )],
                         )  
