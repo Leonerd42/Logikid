@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:logikid/pages/AddInstruction.dart';
 import 'package:logikid/pages/ChooseAction.dart';
+import 'package:logikid/pages/Program.dart';
 import './../components/DefaultPageTest.dart';
 import './../components/CustomizedButton.dart';
 import './../components/SlideTransition.dart';
-class Program extends StatelessWidget {
+
+class ConfirmInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultPageTest(
@@ -17,32 +19,20 @@ class Program extends StatelessWidget {
               ),
               ],
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 60, right: 20,left: 20,bottom: 20),
-              child: Flex(
-                        direction: Axis.horizontal,
-                        children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Container(
-                            child: Padding(
-                                padding: EdgeInsets.only(
-                                    left: 10.0, right: 20, top: 0.0, bottom: 10.0),
-                                child: Button('assets/imgs/add.png', 'Adicionar', 68.0, 68.0,
-                                    'adicionar', changePage)),
-                        ),Container(
-                            child: Padding(
-                                padding: EdgeInsets.only(
-                                    left:65, right: 00, top: 0.0, bottom: 10.0),
-                                child: Button('assets/imgs/program.png', 'Programa', 68.0, 68.0,
-                                    'programa', changePage)),
-                        )],
-                        )
-                        
-                      ],)    ,
+            SingleChildScrollView(
+              padding: EdgeInsets.only(top: 40, right: 10,left: 10),
+                child: TextFormField(readOnly: true,
+                initialValue: 'Mover para o centro com o valor de 1,1 para x e y, respectivamente ',
+                maxLines: 5,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
+                  style: TextStyle(fontSize: 25),
+                ),
             ),
+            
             Padding(
-              padding: EdgeInsets.only(top: 30, right: 20,left: 20,bottom: 20),
+              padding: EdgeInsets.only(top: 10, right: 20,left: 20,bottom: 10),
               child: Flex(
                         direction: Axis.horizontal,
                         children: <Widget>[
@@ -72,11 +62,11 @@ class Program extends StatelessWidget {
   void changePage(String page, BuildContext ctx) {
     switch (page) {
       case 'sair':
-        Navigator.push(ctx, RotationRoute(page: ChooseAction()));
+        Navigator.pop(ctx);
         //Navigator.of(ctx).pushNamed('/login');
         break;
-      case 'adicionar':
-        Navigator.push(ctx, RotationRoute(page: AddInstruction()));
+      case 'executar':
+        Navigator.push(ctx, RotationRoute(page: Program()));
         break;
       /*case 'info':
         Navigator.push(ctx, SlideUpRoute(page: InfoPage()));
