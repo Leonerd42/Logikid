@@ -1,6 +1,7 @@
 # logikid
 
-Aplicativo mobile para auxiliar crianças na aprendizagem de programação.
+Aplicativo mobile para auxiliar crianças na aprendizagem de programação. 
+O aplicativo foi parcialmente desenvolvido como parte da disciplina de Engenharia de Software II, da UNESP do Campus de Bauru.
 
 ## Getting Started
 
